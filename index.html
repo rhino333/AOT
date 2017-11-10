@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+    <style>
+      *{ padding:0px; margin:0px; }
+      #contentWrapper { position: relative; }
+      #content { position: fixed; top: 0; left: 0; right: 0; bottom: 0; }
+    </style>
+
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-
+    <div master id="contentWrapper">
+      <webview ng-style="style" id="content" src="http://www.tutorialbook.co.kr" autosize="on" allowpopups></webview>
+    </div>
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
